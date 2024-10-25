@@ -47,7 +47,7 @@ export async function createModal(pokemonUrl) {
   console.log("FetchDetails: ", responseDetails);
   document.querySelector(".modal-title").innerHTML = responseDetails.name;
   let img = responseDetails["sprites"]["front_default"];
-
+  
   let abilities = responseDetails["abilities"];
   let stringAbilities = "";
   abilities.forEach((ability) => {

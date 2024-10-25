@@ -20,3 +20,18 @@ body{
     gap: 20px;
     flex-wrap: wrap;
 }
+
+.modal-body{
+    text-align: center;
+    font-weight: 900;
+}
+.modal-title{
+    margin-left: auto;
+}
+.btn-close{
+    margin: 0;
+}
+#image-pokemon{
+    width: 12.5rem;
+    height: 12.5rem;
+}
