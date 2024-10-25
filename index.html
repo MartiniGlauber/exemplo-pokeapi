@@ -32,8 +32,11 @@
 
     <main>
       <div class="wrapper-content" id="pokemon-list"></div>
+      <!-- Botão carregar mais -->
+      <button type="button" class="btn btn-primary" id="btnCarregarMais">
+        Carregar mais
+      </button>
     </main>
-
     <div
       id="error-alert"
       class="alert alert-danger d-none position-fixed bottom-0 start-50 translate-middle-x"
@@ -61,8 +64,12 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <div class="modal-body modalBody2">...</div>
+          <div class="modal-body">
+            <img id="image-pokemon" src="" />
+          </div>
+          <div class="modal-body modalBody2">
+            <span class="modal-abilities"></span>
+          </div>
           <div class="modal-footer">
             <button
               type="button"

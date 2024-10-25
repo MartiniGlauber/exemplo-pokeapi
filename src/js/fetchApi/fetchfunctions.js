@@ -11,17 +11,13 @@ export async function listAllPokemons(urlApi = urlPokeApi) {
     showError("Ops! Erro inesperado");
   }
 }
-export async function fetchDetails(urlApi = urlPokeApi, index) {
+export async function fetchDetails(urlApi = urlPokeApi) {
   try {
-    const data = await fetch(urlApi, index);
+    const data = await fetch(urlApi);
+
     const response = await data.json();
 
-    let img = data["sprites"]["front-default"];
-
-    const modalBody = document
-      .getElementsByClassName("modal-body")
-      .setAttribute("src", img);
-    console.log(response);
+    console.log("Response details: ", response);
 
     return response;
   } catch (error) {
