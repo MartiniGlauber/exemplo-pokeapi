@@ -20,8 +20,12 @@ body{
     gap: 20px;
     flex-wrap: wrap;
 }
+.modal-header{
+    padding: 0.25rem 0.25rem;
+}
 .modal-title{
     margin-left: auto;
+    font-weight: 900;
 }
 
 .btn-close{
@@ -33,11 +37,29 @@ body{
 }
 
 #image-pokemon{
+    margin-left: 8rem;
     width: 12.5rem;
     height: 12.5rem;
 }
 
-.modal-body.modalBody2{
+.modal-description{
     align-self: start;
     font-weight: 900;
+}
+.modal-abilities{
+    align-self: start;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+}
+.modal-footer{
+    padding: 0.25rem;
+}
+
+label{
+    font-weight: 900;
+}
+
+.label-abilities{
+    margin-left: 1rem;
 }

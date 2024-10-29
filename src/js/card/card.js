@@ -18,10 +18,15 @@ export function createCard(pokemon, index) {
 
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = `${pokemon.name}`; //está certo???
+  cardTitle.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
 
   const cardText = document.createElement("p");
   cardText.classList.add("card-text");
+  // let stringTypes = "";
+  // abilities.forEach((type) =>{
+  //   stringTypes += abilities.type.name;
+  //   console.log("Types: ", type);
+  // })
   cardText.textContent =
     "Some quick example text to build on the card title and make up the bulk of the"; // tem que puxar descrição de forma dinamica
 
@@ -46,23 +51,23 @@ export function createCard(pokemon, index) {
 
 export async function createModal(pokemonUrl) {
   const responseDetails = await fetchDetails(pokemonUrl);
+
   console.log("FetchDetails: ", responseDetails);
-  document.querySelector(".modal-title").innerHTML = responseDetails.name;
+  document.querySelector(".modal-title").innerHTML = responseDetails.name.charAt(0).toUpperCase() + responseDetails.name.slice(1);
   let img = responseDetails["sprites"]["front_default"];
   
   let abilities = responseDetails["abilities"];
   let stringAbilities = "";
   abilities.forEach((ability) => {
-    stringAbilities += ability.ability.name + "    ";
+    stringAbilities += ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + "\n";
     console.log("habilidade: ", ability);
   });
   let speciesUrl = responseDetails["species"].url;
-  const desciption = await fetchDescription(speciesUrl);
-  console.log("Descição :", desciption);
-  console.log("Especies: ", speciesUrl);
-  console.log("habilidades: ", abilities);
+  const description = await fetchDescription(speciesUrl);
+  let stringDescription = description;
+  console.log("Description", description);
 
   document.querySelector("#image-pokemon").setAttribute("src", img);
-  document.querySelector(".modal-abilities").textContent = stringAbilities;
-
+  document.querySelector(".modal-abilities").innerHTML = stringAbilities.replace(/\n/, "<br>");
+  document.querySelector(".modal-description").textContent = stringDescription;
 }

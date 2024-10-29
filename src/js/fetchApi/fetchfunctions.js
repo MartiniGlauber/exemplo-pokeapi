@@ -27,7 +27,10 @@ export async function fetchDescription(urlApi) {
     const data = await fetch(urlApi);
     const responseDescription = await data.json();
     return responseDescription.flavor_text_entries[0].flavor_text;
-  
+    
+    // const flavorText = responseDescription.flavor_text_entries.find(entry => entry.language.name === `en`); 
+    // const description = flavorText ? flavorText.flavor_text_entries : "No description avaianble";
+    // return description;
     
   }  catch (error) {
     showError("Ops! Erro no fetch Descrition.");
