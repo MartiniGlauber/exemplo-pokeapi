@@ -1,5 +1,6 @@
 import { pokemonList, urlPokeApi } from "../constants/constants.js";
-import { fetchDetails } from "../fetchApi/fetchfunctions.js";
+import { fetchDescription, fetchDetails } from "../fetchApi/fetchfunctions.js";
+import { getPokemonId } from "../utils/utils.js";
 
 export function createCard(pokemon, index) {
   console.log(pokemon);
@@ -31,6 +32,7 @@ export function createCard(pokemon, index) {
   btnVerMais.setAttribute("data-bs-target", "#exampleModal");
   btnVerMais.addEventListener("click", () => {
     createModal(pokemon.url);
+    console.log(pokemon.url);
   });
 
   card.appendChild(imgPokemon);
@@ -54,8 +56,13 @@ export async function createModal(pokemonUrl) {
     stringAbilities += ability.ability.name + "    ";
     console.log("habilidade: ", ability);
   });
+  let speciesUrl = responseDetails["species"].url;
+  const desciption = await fetchDescription(speciesUrl);
+  console.log("Descição :", desciption);
+  console.log("Especies: ", speciesUrl);
   console.log("habilidades: ", abilities);
 
   document.querySelector("#image-pokemon").setAttribute("src", img);
   document.querySelector(".modal-abilities").textContent = stringAbilities;
+
 }

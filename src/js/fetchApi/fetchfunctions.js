@@ -8,7 +8,7 @@ export async function listAllPokemons(urlApi = urlPokeApi) {
 
     return response;
   } catch (error) {
-    showError("Ops! Erro inesperado");
+    showError("Ops! Erro no listAll bicho do inferno");
   }
 }
 export async function fetchDetails(urlApi = urlPokeApi) {
@@ -17,10 +17,19 @@ export async function fetchDetails(urlApi = urlPokeApi) {
 
     const response = await data.json();
 
-    console.log("Response details: ", response);
-
     return response;
   } catch (error) {
-    showError("Ops! Erro inesperado.");
+    showError("Ops! Erro no fetch Details.");
+  }
+}
+export async function fetchDescription(urlApi) {
+  try{
+    const data = await fetch(urlApi);
+    const responseDescription = await data.json();
+    return responseDescription.flavor_text_entries[0].flavor_text;
+  
+    
+  }  catch (error) {
+    showError("Ops! Erro no fetch Descrition.");
   }
 }
