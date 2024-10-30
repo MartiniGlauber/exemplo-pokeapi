@@ -2,7 +2,7 @@ import { pokemonList, urlPokeApi } from "../constants/constants.js";
 import { fetchDescription, fetchDetails } from "../fetchApi/fetchfunctions.js";
 import { getPokemonId } from "../utils/utils.js";
 
-export function createCard(pokemon, index) {
+export function createCard(pokemon, index, pokemonTypes) {
   console.log(pokemon);
 
   const card = document.createElement("div");
@@ -16,19 +16,18 @@ export function createCard(pokemon, index) {
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  const cardTitle = document.createElement("h5");
+  const cardTitle = document.createElement("h4");
   cardTitle.classList.add("card-title");
   cardTitle.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
 
-  const cardText = document.createElement("p");
+  const cardText = document.createElement("h5");
   cardText.classList.add("card-text");
-  // let stringTypes = "";
-  // abilities.forEach((type) =>{
-  //   stringTypes += abilities.type.name;
-  //   console.log("Types: ", type);
-  // })
-  cardText.textContent =
-    "Some quick example text to build on the card title and make up the bulk of the"; // tem que puxar descrição de forma dinamica
+  cardText.classList.add("text-capitalize");
+
+  let stringTypes = pokemonTypes[0].type.name + ((pokemonTypes[1]) ? " / " + pokemonTypes[1].type.name : "");
+  
+  cardText.textContent = stringTypes;
+   
 
   const btnVerMais = document.createElement("button");
   btnVerMais.textContent = "Ver mais";
