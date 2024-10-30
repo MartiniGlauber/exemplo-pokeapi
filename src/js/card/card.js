@@ -16,11 +16,16 @@ export function createCard(pokemon, index, pokemonTypes) {
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  const cardTitle = document.createElement("h4");
+  const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
   cardTitle.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
 
-  const cardText = document.createElement("h5");
+  const cardTypeLabel = document.createElement("h6");
+  cardTypeLabel.classList.add("card-type-label");
+  cardTypeLabel.textContent = "Types:";
+  console.log("Label Types: ", cardTypeLabel);
+
+  const cardText = document.createElement("h4");
   cardText.classList.add("card-text");
   cardText.classList.add("text-capitalize");
 
@@ -42,6 +47,7 @@ export function createCard(pokemon, index, pokemonTypes) {
   card.appendChild(imgPokemon);
   card.appendChild(cardBody);
   cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardTypeLabel);
   cardBody.appendChild(cardText);
   cardBody.appendChild(btnVerMais);
 
