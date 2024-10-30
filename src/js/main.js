@@ -10,31 +10,33 @@ const { count, results, next, previous } = await listAllPokemons();
 
 let nextPage = next;
 
-const btnVejaMais = document.querySelector("#btnCarregarMais");
+const btnCarregarMais = document.querySelector("#btnCarregarMais");
 
 console.log("Pokemons: ", results);
 
 for (const pokemon of results) {
   const pokemonId = getPokemonId(pokemon.url);
-  await createCard(pokemon, pokemonId);
+  const {types} = await fetchDetails(pokemon.url);
+  await createCard(pokemon, pokemonId, types);
 }
 
-btnVejaMais.addEventListener("click", async (event) => {
+btnCarregarMais.addEventListener("click", async (event) => {
   try {
     const data = await fetch(nextPage);
     const response = await data.json();
 
-    // Cria os cards e adiciona à página
-    response.results.forEach((pokemon) => {
+    // Cria os cards e adiciona à página -- USAR FOR OF
+    response.results.forEach(async (pokemon) => {
       const pokemonId = getPokemonId(pokemon.url);
-      createCard(pokemon, pokemonId);
+      const {types} = await fetchDetails(pokemon.url);
+      createCard(pokemon, pokemonId, types);
     });
     // Atualiza o URL da próxima página
     nextPage = response.next;
 
     // Verifica se há mais páginas
     if (!response.next) {
-      btnVejaMais.disabled = true;
+      btnCarregarMais.disabled = true;
     }
 
     console.log(response);

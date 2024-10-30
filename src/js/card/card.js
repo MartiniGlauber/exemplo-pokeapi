@@ -1,7 +1,8 @@
 import { pokemonList, urlPokeApi } from "../constants/constants.js";
-import { fetchDetails } from "../fetchApi/fetchfunctions.js";
+import { fetchDescription, fetchDetails } from "../fetchApi/fetchfunctions.js";
+import { getPokemonId } from "../utils/utils.js";
 
-export function createCard(pokemon, index) {
+export function createCard(pokemon, index, pokemonTypes) {
   console.log(pokemon);
 
   const card = document.createElement("div");
@@ -15,14 +16,23 @@ export function createCard(pokemon, index) {
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
 
-  const cardTitle = document.createElement("h5");
+  const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = `${pokemon.name}`; //está certo???
+  cardTitle.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
 
-  const cardText = document.createElement("p");
+  const cardTypeLabel = document.createElement("h6");
+  cardTypeLabel.classList.add("card-type-label");
+  cardTypeLabel.textContent = "Types:";
+  console.log("Label Types: ", cardTypeLabel);
+
+  const cardText = document.createElement("h4");
   cardText.classList.add("card-text");
-  cardText.textContent =
-    "Some quick example text to build on the card title and make up the bulk of the"; // tem que puxar descrição de forma dinamica
+  cardText.classList.add("text-capitalize");
+
+  let stringTypes = pokemonTypes[0].type.name + ((pokemonTypes[1]) ? " / " + pokemonTypes[1].type.name : "");
+  
+  cardText.textContent = stringTypes;
+   
 
   const btnVerMais = document.createElement("button");
   btnVerMais.textContent = "Ver mais";
@@ -31,11 +41,13 @@ export function createCard(pokemon, index) {
   btnVerMais.setAttribute("data-bs-target", "#exampleModal");
   btnVerMais.addEventListener("click", () => {
     createModal(pokemon.url);
+    console.log(pokemon.url);
   });
 
   card.appendChild(imgPokemon);
   card.appendChild(cardBody);
   cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardTypeLabel);
   cardBody.appendChild(cardText);
   cardBody.appendChild(btnVerMais);
 
@@ -44,18 +56,23 @@ export function createCard(pokemon, index) {
 
 export async function createModal(pokemonUrl) {
   const responseDetails = await fetchDetails(pokemonUrl);
-  console.log("FetchDetails: ", responseDetails);
-  document.querySelector(".modal-title").innerHTML = responseDetails.name;
-  let img = responseDetails["sprites"]["front_default"];
 
+  console.log("FetchDetails: ", responseDetails);
+  document.querySelector(".modal-title").innerHTML = responseDetails.name.charAt(0).toUpperCase() + responseDetails.name.slice(1);
+  let img = responseDetails["sprites"]["front_default"];
+  
   let abilities = responseDetails["abilities"];
   let stringAbilities = "";
   abilities.forEach((ability) => {
-    stringAbilities += ability.ability.name + "    ";
+    stringAbilities += ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + "\n";
     console.log("habilidade: ", ability);
   });
-  console.log("habilidades: ", abilities);
+  let speciesUrl = responseDetails["species"].url;
+  const description = await fetchDescription(speciesUrl);
+  let stringDescription = description;
+  console.log("Description", description);
 
   document.querySelector("#image-pokemon").setAttribute("src", img);
-  document.querySelector(".modal-abilities").textContent = stringAbilities;
+  document.querySelector(".modal-abilities").innerHTML = stringAbilities.replace(/\n/, "<br>");
+  document.querySelector(".modal-description").textContent = stringDescription;
 }
