@@ -1,5 +1,5 @@
 import { createCard, createModal } from "./card/card.js";
-import { urlPokeApi, urlPokeApiImg } from "./constants/constants.js";
+import { urlPokeApi } from "./constants/constants.js";
 import { showError } from "./errors/errors.js";
 import { listAllPokemons, fetchDetails } from "./fetchApi/fetchfunctions.js";
 import { getPokemonId } from "./utils/utils.js";
@@ -10,7 +10,7 @@ const { count, results, next, previous } = await listAllPokemons();
 
 let nextPage = next;
 
-const btnVejaMais = document.querySelector("#btnCarregarMais");
+const btnCarregarMais = document.querySelector("#btnCarregarMais");
 
 console.log("Pokemons: ", results);
 
@@ -19,7 +19,7 @@ for (const pokemon of results) {
   await createCard(pokemon, pokemonId);
 }
 
-btnVejaMais.addEventListener("click", async (event) => {
+btnCarregarMais.addEventListener("click", async (event) => {
   try {
     const data = await fetch(nextPage);
     const response = await data.json();
@@ -34,7 +34,7 @@ btnVejaMais.addEventListener("click", async (event) => {
 
     // Verifica se há mais páginas
     if (!response.next) {
-      btnVejaMais.disabled = true;
+      btnCarregarMais.disabled = true;
     }
 
     console.log(response);
