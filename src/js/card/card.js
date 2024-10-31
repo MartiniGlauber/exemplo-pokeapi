@@ -17,12 +17,12 @@ export function createCard(pokemon, index) {
 
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = `${pokemon.name}`; //está certo???
+  cardTitle.textContent = `${pokemon.name}`;
 
   const cardText = document.createElement("p");
   cardText.classList.add("card-text");
-  cardText.textContent =
-    "Some quick example text to build on the card title and make up the bulk of the"; // tem que puxar descrição de forma dinamica
+  cardText.textContent = `${pokemon.width}`;
+  // "Some quick example text to build on the card title and make up the bulk of the"; // tem que puxar descrição de forma dinamica
 
   const btnVerMais = document.createElement("button");
   btnVerMais.textContent = "Ver mais";
