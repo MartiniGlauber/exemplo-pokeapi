@@ -1,5 +1,5 @@
 import { createCard, createModal } from "./card/card.js";
-import { urlPokeApi, urlPokeApiImg } from "./constants/constants.js";
+import { urlPokeApi } from "./constants/constants.js";
 import { showError } from "./errors/errors.js";
 import { listAllPokemons, fetchDetails } from "./fetchApi/fetchfunctions.js";
 import { getPokemonId } from "./utils/utils.js";
