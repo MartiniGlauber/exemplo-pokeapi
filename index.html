@@ -26,14 +26,15 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand">Pokemons</a>
-          <form class="d-flex" role="search">
+          <form class="d-flex" id="searchPokemon" role="search">
             <input
               class="form-control me-3"
+              id="searchInput"
               type="search"
               placeholder="Digite o nome do Pokemon"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="searchButton" type="submit">
               Pesquisar
             </button>
           </form>
@@ -52,6 +53,10 @@
       <button type="button" class="btn btn-primary" id="btnCarregarMais">
         Carregar mais
       </button>
+
+      <div id="results">
+
+      </div>
     </main>
     <div
       id="error-alert"

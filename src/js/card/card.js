@@ -25,7 +25,6 @@ export function createCard(pokemon, index, pokemonTypes) {
   const cardTypeLabel = document.createElement("h6");
   cardTypeLabel.classList.add("card-type-label");
   cardTypeLabel.textContent = "Types:";
-  console.log("Label Types: ", cardTypeLabel);
 
   const cardText = document.createElement("h4");
   cardText.classList.add("card-text");
@@ -58,6 +57,7 @@ export function createCard(pokemon, index, pokemonTypes) {
 }
 
 export async function createModal(pokemonUrl) {
+  //console.log("TESTE 2");
   const responseDetails = await fetchDetails(pokemonUrl);
 
   console.log("FetchDetails: ", responseDetails);
