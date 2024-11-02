@@ -18,21 +18,23 @@ export function createCard(pokemon, index, pokemonTypes) {
 
   const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = `${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}`;
+  cardTitle.textContent = `${
+    pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
+  }`;
 
   const cardTypeLabel = document.createElement("h6");
   cardTypeLabel.classList.add("card-type-label");
   cardTypeLabel.textContent = "Types:";
-  console.log("Label Types: ", cardTypeLabel);
 
   const cardText = document.createElement("h4");
   cardText.classList.add("card-text");
   cardText.classList.add("text-capitalize");
 
-  let stringTypes = pokemonTypes[0].type.name + ((pokemonTypes[1]) ? " / " + pokemonTypes[1].type.name : "");
-  
+  let stringTypes =
+    pokemonTypes[0].type.name +
+    (pokemonTypes[1] ? " / " + pokemonTypes[1].type.name : "");
+
   cardText.textContent = stringTypes;
-   
 
   const btnVerMais = document.createElement("button");
   btnVerMais.textContent = "Ver mais";
@@ -55,16 +57,22 @@ export function createCard(pokemon, index, pokemonTypes) {
 }
 
 export async function createModal(pokemonUrl) {
+  //console.log("TESTE 2");
   const responseDetails = await fetchDetails(pokemonUrl);
 
   console.log("FetchDetails: ", responseDetails);
-  document.querySelector(".modal-title").innerHTML = responseDetails.name.charAt(0).toUpperCase() + responseDetails.name.slice(1);
+  document.querySelector(".modal-title").innerHTML =
+    responseDetails.name.charAt(0).toUpperCase() +
+    responseDetails.name.slice(1);
   let img = responseDetails["sprites"]["front_default"];
-  
+
   let abilities = responseDetails["abilities"];
   let stringAbilities = "";
   abilities.forEach((ability) => {
-    stringAbilities += ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1) + "\n";
+    stringAbilities +=
+      ability.ability.name.charAt(0).toUpperCase() +
+      ability.ability.name.slice(1) +
+      "\n";
     console.log("habilidade: ", ability);
   });
   let speciesUrl = responseDetails["species"].url;
@@ -73,6 +81,7 @@ export async function createModal(pokemonUrl) {
   console.log("Description", description);
 
   document.querySelector("#image-pokemon").setAttribute("src", img);
-  document.querySelector(".modal-abilities").innerHTML = stringAbilities.replace(/\n/, "<br>");
+  document.querySelector(".modal-abilities").innerHTML =
+    stringAbilities.replace(/\n/, "<br>");
   document.querySelector(".modal-description").textContent = stringDescription;
 }
