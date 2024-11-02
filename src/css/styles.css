@@ -20,6 +20,10 @@ body{
     gap: 20px;
     flex-wrap: wrap;
 }
+
+.card-body{
+    padding: 0rem 1rem 0.5rem 1rem
+}
 .modal-header{
     padding: 0.25rem 0.25rem;
 }
@@ -62,4 +66,8 @@ label{
 
 .label-abilities{
     margin-left: 1rem;
+}
+.title-pokemon{
+    width: 70%;
+    align-self: center;
 }

@@ -9,6 +9,10 @@ export function createCard(pokemon, index, pokemonTypes) {
   card.classList.add("card");
   card.style.width = "18rem";
 
+  const titlePokemon = document.createElement("img");
+  titlePokemon.classList.add("title-pokemon");
+  titlePokemon.src = "src/assets/images/pokemon-title.svg";
+
   const imgPokemon = document.createElement("img");
   imgPokemon.classList.add("card-img-top");
   imgPokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`;
@@ -45,7 +49,7 @@ export function createCard(pokemon, index, pokemonTypes) {
     createModal(pokemon.url);
     console.log(pokemon.url);
   });
-
+  card.appendChild(titlePokemon);
   card.appendChild(imgPokemon);
   card.appendChild(cardBody);
   cardBody.appendChild(cardTitle);
