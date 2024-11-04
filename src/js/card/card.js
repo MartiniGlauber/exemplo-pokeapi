@@ -9,6 +9,10 @@ export function createCard(pokemon, index, pokemonTypes) {
   card.classList.add("card");
   card.style.width = "18rem";
 
+  const backgroundImgCard = document.createElement("img");
+  backgroundImgCard.classList.add("background-img-card");
+  backgroundImgCard.src = "src/assets/images/pokemon-background2.jpg";
+
   const titlePokemon = document.createElement("img");
   titlePokemon.classList.add("title-pokemon");
   titlePokemon.src = "src/assets/images/pokemon-title.svg";
@@ -49,6 +53,7 @@ export function createCard(pokemon, index, pokemonTypes) {
     createModal(pokemon.url);
     console.log(pokemon.url);
   });
+  card.appendChild(backgroundImgCard);
   card.appendChild(titlePokemon);
   card.appendChild(imgPokemon);
   card.appendChild(cardBody);
