@@ -8,8 +8,7 @@ export async function searchPokemon(searchValue) {
   try {
     await createModal(pokemonQuery);
   } catch (error) {
-    console.error("Erro na busca:", error);
-    document.getElementById("results").innerHTML = "Erro na busca.";
+    showError("Certifique-se de que digitou o nome do pokemon corretamente")
   }
 }
 

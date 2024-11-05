@@ -3,6 +3,7 @@ export function showError(message) {
     const alertDiv = document.getElementById('error-alert');
     alertDiv.classList.remove('d-none');  // Remove a classe 'd-none' para exibir o alerta
     alertDiv.textContent = message;       // Define a mensagem de erro no alerta
+    alertDiv.style.zIndex = "1";
 
     // Opcional: esconder o alerta após alguns segundos
      setTimeout(() => {

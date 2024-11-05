@@ -8,10 +8,14 @@ export function createCard(pokemon, index, pokemonTypes) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = "18rem";
+  card.style.borderRadius = "6px";
+  card.style.cursor = "pointer";
 
   const backgroundImgCard = document.createElement("img");
   backgroundImgCard.classList.add("background-img-card");
-  backgroundImgCard.src = "src/assets/images/pokemon-background2.jpg";
+  // backgroundImgCard.src = "src/assets/images/pokemon9.jpg";
+  backgroundImgCard.style.borderRadius = "6px";
+  backgroundImgCard.style.backgroundColor = "#FFCB05";
 
   const titlePokemon = document.createElement("img");
   titlePokemon.classList.add("title-pokemon");

@@ -8,11 +8,12 @@ main{
 body{
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
-    background-image: url("/src/assets/images/background-pokemon-field.jpg");
+    row-gap: 100px;
+    background-image: url("/src/assets/images/poke-ball-pokeball-black.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .wrapper-content{
@@ -20,6 +21,13 @@ body{
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+.card{ 
+    transition: transform 0.5s, filter 0.5s; 
+} 
+.card:hover{
+    transform: scale(1.05); 
+    filter: brightness(1.1);   
 }
 
 .card-body{
@@ -40,6 +48,10 @@ body{
 }
 .card-img-top{
     z-index: 1;
+}
+.btn-primary{
+    background-color: #3C5BA6;
+    border-color: #3C5BA6;
 }
 .modal-header{
     padding: 0.25rem 0.25rem;
