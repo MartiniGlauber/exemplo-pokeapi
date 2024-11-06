@@ -23,7 +23,7 @@
 
   <body>
     <header class="header-content">
-      <nav class="navbar bg-body-tertiary">
+      <!-- <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand">Pokemons</a>
           <form class="d-flex" id="searchPokemon" role="search">
@@ -39,12 +39,24 @@
             </button>
           </form>
         </div>
-      </nav>
+      </nav> -->
       <img
         class="header-logo"
         src="src/assets/images/pokemon-title.svg"
         alt="Logo Pokemon"
       />
+      <form class="d-flex" id="searchPokemon" role="search">
+        <input
+          class="form-control me-3 inputSearch"
+          id="searchInput"
+          type="search"
+          placeholder="Digite o nome do Pokemon"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="searchButton" type="submit">
+          Pesquisar
+        </button>
+      </form>
     </header>
 
     <main>

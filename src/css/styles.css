@@ -1,116 +1,162 @@
-
 @import "header.css";
 
-main{
-    height: 100vh;
+main {
+  height: 100vh;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    row-gap: 100px;
-    background-image: url("/src/assets/images/poke-ball-pokeball-red.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background-image: url("/src/assets/images/pokeball.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.wrapper-content{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.wrapper-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.card{ 
-    transition: transform 0.5s, filter 0.5s; 
-    background-color: #c9c1c1;  
-} 
-.card:hover{
-    transform: scale(1.05); 
-    filter: brightness(1.1);   
+.card {
+  transition: transform 0.5s, filter 0.5s;
+  background-color: #c9c1c1;
 }
-.card-title{
-    align-self: center;
-    margin-top: 1rem;
+.card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
-.card-type-label{
-    align-self: center;
+.card-title {
+  align-self: center;
+  margin-top: 1rem;
 }
-.card-text{
-    align-self: center;
+.card-type-label {
+  align-self: center;
 }
-.card-text:last-child{
-    margin-bottom: 1rem;
+.card-text {
+  align-self: center;
 }
-.card-body{
-    padding: 0rem 1rem 0.5rem 1rem;
-    z-index: 1;
+.card-text:last-child {
+  margin-bottom: 1rem;
 }
-.background-img-card{
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-}
-.title-pokemon{
-    margin-top: 0.5rem;
-    position: relative;
-    z-index: 1;
-}
-.card-img-top{
-    z-index: 1;
-    filter: drop-shadow(3px 3px 3px rgb(43, 40, 40));
-}
-.btn-primary{
-    background-color: #3C5BA6;
-    border-color: #3C5BA6;
-}
-.modal-header{
-    padding: 0.25rem 0.25rem;
-}
-.modal-title{
-    margin-left: auto;
-    font-weight: 900;
+.card-body {
+  padding: 0rem 1rem 0.5rem 1rem;
+  z-index: 1;
 }
 
-.btn-close{
-    margin: 0;
+.background-img-card {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
 }
 
-.modal-body{
-    align-self: center;
+.title-pokemon {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-#image-pokemon{
-    margin-left: 8rem;
-    width: 12.5rem;
-    height: 12.5rem;
+.card-img-top {
+  z-index: 1;
+  filter: drop-shadow(3px 3px 3px rgb(43, 40, 40));
+}
+.btn-primary {
+  background-color: #3c5ba6;
+  border-color: #3c5ba6;
+}
+.modal-header {
+  padding: 0.25rem 0.25rem;
+}
+.modal-title {
+  margin-left: auto;
+  font-weight: 900;
 }
 
-.modal-description{
-    align-self: start;
-    font-weight: 900;
-}
-.modal-abilities{
-    align-self: start;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 900;
-}
-.modal-footer{
-    padding: 0.25rem;
+.btn-close {
+  margin: 0;
 }
 
-label{
-    font-weight: 900;
+.btn {
+  background-color: green;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-.label-abilities{
-    margin-left: 1rem;
+.btn:hover {
+  background-color: rgb(72, 248, 72);
+  color: black;
 }
-.title-pokemon{
-    width: 70%;
-    align-self: center;
+
+.btn {
+  background-color: green;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.btn:hover {
+  background-color: rgb(72, 248, 72);
+  color: black;
+}
+
+.modal-body {
+  align-self: center;
+}
+
+#image-pokemon {
+  margin-left: 8rem;
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
+#searchPokemon {
+  display: flex;
+  width: 35rem;
+  align-content: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  background-color: rgba(2, 2, 5, 0.589);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+#searchPokemon {
+  display: flex;
+  width: 35rem;
+  align-content: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  background-color: rgba(2, 2, 5, 0.589);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.modal-description {
+  align-self: start;
+  font-weight: 900;
+}
+.modal-abilities {
+  align-self: start;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+}
+.modal-footer {
+  padding: 0.25rem;
+}
+
+label {
+  font-weight: 900;
+}
+
+.label-abilities {
+  margin-left: 1rem;
+}
+
+.title-pokemon {
+  width: 70%;
+  align-self: center;
 }
