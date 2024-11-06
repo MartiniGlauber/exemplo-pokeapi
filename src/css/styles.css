@@ -116,6 +116,14 @@ body {
   width: 12.5rem;
   height: 12.5rem;
   filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.fade-out{
+  opacity: 0;
+}
+.fade-in{
+  opacity: 1;
 }
 
 #searchPokemon {
