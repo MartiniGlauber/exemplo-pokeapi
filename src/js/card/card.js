@@ -1,6 +1,6 @@
 import { pokemonList, urlPokeApi } from "../constants/constants.js";
 import { fetchDescription, fetchDetails } from "../fetchApi/fetchfunctions.js";
-import { getPokemonId } from "../utils/utils.js";
+import { clearCurrentInterval, getPokemonId } from "../utils/utils.js";
 
 export function createCard(pokemon, index, pokemonTypes) {
   console.log(pokemon);
@@ -73,6 +73,8 @@ export function createCard(pokemon, index, pokemonTypes) {
 }
 
 export async function createModal(pokemonUrl) {
+
+  clearCurrentInterval();
   //console.log("TESTE 2");
   const responseDetails = await fetchDetails(pokemonUrl);
 
@@ -104,15 +106,23 @@ export async function createModal(pokemonUrl) {
   stringAbilities.replace(/\n/, "<br>");
   document.querySelector(".modal-description").textContent = stringDescription;
   
-  let currentImg = 'front';
-  const interval = setInterval(() =>{
-    const img = document.querySelector("#image-pokemon");
-      if(currentImg == 'front'){
-        img.setAttribute("src", backImg);
-        currentImg = 'back';
-      } else{
-        img.setAttribute("src", frontImg);
-        currentImg = 'front';
-      }
-    },2000);
+  let currentImg = 'front'; 
+  currentInterval = setInterval(() => { 
+    const img = document.querySelector("#image-pokemon"); 
+    img.classList.add('fade-out'); 
+    setTimeout(() => { 
+      if (currentImg === 'front') { 
+        img.setAttribute("src", backImg); 
+        currentImg = 'back'; 
+      } else { 
+        img.setAttribute("src", frontImg); 
+        currentImg = 'front'; 
+      } 
+      img.classList.remove('fade-out'); 
+      img.classList.add('fade-in'); 
+      setTimeout(() => { 
+        img.classList.remove('fade-in'); 
+      }, 1000); 
+    }, 1000); 
+  }, 2000);
 }
