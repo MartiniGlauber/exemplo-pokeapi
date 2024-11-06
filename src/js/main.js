@@ -16,7 +16,7 @@ let nextPage = next;
 
 const btnCarregarMais = document.querySelector("#btnCarregarMais");
 const formSearch = document.getElementById("searchPokemon");
-//console.log("Pokemons: ", results);
+
 
 // Evento clique no botão pesquisar do nav
 formSearch.addEventListener("submit", async (event) => {
@@ -42,13 +42,13 @@ btnCarregarMais.addEventListener("click", async (event) => {
     const data = await fetch(nextPage);
     const response = await data.json();
 
-    // Cria os cards e adiciona à página -- USAR FOR OF
-    response.results.forEach(async (pokemon) => {
+    // Cria os cards e adiciona à página -- 
+    for (const pokemon of response.results) {
       const pokemonId = getPokemonId(pokemon.url);
-      
       const { types } = await fetchDetails(pokemon.url);
       createCard(pokemon, pokemonId, types);
-    });
+    }
+
     // Atualiza o URL da próxima página
     nextPage = response.next;
 
@@ -57,9 +57,8 @@ btnCarregarMais.addEventListener("click", async (event) => {
       btnCarregarMais.disabled = true;
     }
 
-    console.log(response);
   } catch (error) {
-    console.log("Erro: ", error);
     showError("Ops! Erro inesperado");
   }
 });
+

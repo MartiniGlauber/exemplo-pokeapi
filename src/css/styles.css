@@ -13,6 +13,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  padding-bottom: 3rem;
 }
 
 .wrapper-content {
@@ -21,9 +22,13 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
+.back-to-top-link{
+  font-size: 2rem;
+  float: right;
+}
 .card {
   transition: transform 0.5s, filter 0.5s;
-  background-color: #c9c1c193;
+  background-color: #f572728f;
 }
 .card:hover {
   transform: scale(1.05);
@@ -114,6 +119,7 @@ body {
   margin-left: 8rem;
   width: 12.5rem;
   height: 12.5rem;
+  filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
 }
 
 #searchPokemon {
@@ -142,6 +148,7 @@ body {
   align-self: start;
   font-weight: 900;
 }
+
 .modal-abilities {
   align-self: start;
   margin-left: 1rem;

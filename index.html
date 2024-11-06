@@ -17,6 +17,8 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Carrega o font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="src/css/styles.css" />
   </head>
@@ -64,9 +66,8 @@
       <!-- Botão carregar mais -->
       <button type="button" class="btn btn-primary" id="btnCarregarMais">
         Carregar mais
-      </button>
-
-      
+      </button>      
+      <a href="#" class="back-to-top-link"><i class="fa-regular fa-square-caret-up" title="Voltar ao topo"></i></a>
     </main>
     <div
       id="error-alert"
@@ -97,8 +98,8 @@
           </div>
           <div class="modal-body">
             <img id="image-pokemon" src="" />
-            <div>
-              <label class="label-description">Pokemon description:</label>
+            <div class="label-description">
+              <label>Pokemon description:</label>
             </div>
             <div class="modal-description"></div>
               <span class="modal-description-text"></span>
@@ -120,6 +121,7 @@
         </div>
       </div>
     </div>
+    
 
     <!-- Carrega o JS do Bootstrap através de uma CDN -->
     <script
