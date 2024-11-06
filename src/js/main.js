@@ -45,7 +45,7 @@ btnCarregarMais.addEventListener("click", async (event) => {
     // Cria os cards e adiciona à página -- USAR FOR OF
     response.results.forEach(async (pokemon) => {
       const pokemonId = getPokemonId(pokemon.url);
-      console.log("TESTE 1");
+      
       const { types } = await fetchDetails(pokemon.url);
       createCard(pokemon, pokemonId, types);
     });

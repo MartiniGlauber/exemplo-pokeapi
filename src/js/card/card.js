@@ -8,6 +8,19 @@ export function createCard(pokemon, index, pokemonTypes) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = "18rem";
+  card.style.borderRadius = "6px";
+  card.style.cursor = "pointer";
+  card.title = `Ver detalhes do pokemon ${pokemon.name.toUpperCase()}`;
+
+  const backgroundImgCard = document.createElement("img");
+  backgroundImgCard.classList.add("background-img-card");
+  // backgroundImgCard.src = "src/assets/images/pokemon9.jpg";
+  backgroundImgCard.style.borderRadius = "6px";
+  backgroundImgCard.style.backgroundColor = "#FFCB05";
+
+  const titlePokemon = document.createElement("img");
+  titlePokemon.classList.add("title-pokemon");
+  titlePokemon.src = "src/assets/images/pokemon-title.svg";
 
   const imgPokemon = document.createElement("img");
   imgPokemon.classList.add("card-img-top");
@@ -36,22 +49,23 @@ export function createCard(pokemon, index, pokemonTypes) {
 
   cardText.textContent = stringTypes;
 
-  const btnVerMais = document.createElement("button");
-  btnVerMais.textContent = "Ver mais";
-  btnVerMais.classList = "btn btn-primary";
-  btnVerMais.setAttribute("data-bs-toggle", "modal");
-  btnVerMais.setAttribute("data-bs-target", "#exampleModal");
-  btnVerMais.addEventListener("click", () => {
+  // const btnVerMais = document.createElement("button");
+  // btnVerMais.textContent = "Ver mais";
+  // btnVerMais.classList = "btn btn-primary";
+  card.setAttribute("data-bs-toggle", "modal");
+  card.setAttribute("data-bs-target", "#exampleModal");
+  card.addEventListener("click", () => {
     createModal(pokemon.url);
     console.log(pokemon.url);
   });
-
+  // card.appendChild(backgroundImgCard);
+  // card.appendChild(titlePokemon);
+  card.appendChild(cardTitle);
   card.appendChild(imgPokemon);
-  card.appendChild(cardBody);
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardTypeLabel);
-  cardBody.appendChild(cardText);
-  cardBody.appendChild(btnVerMais);
+  // card.appendChild(cardBody);
+  card.appendChild(cardTypeLabel);
+  card.appendChild(cardText);
+  // cardBody.appendChild(btnVerMais);
 
   pokemonList.appendChild(card);
 }
