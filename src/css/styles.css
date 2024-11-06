@@ -12,6 +12,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background-image: url("/src/assets/images/pokeball.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .wrapper-content {
@@ -73,8 +81,13 @@ body {
 .modal-title {
   margin-left: auto;
   font-weight: 900;
+.modal-title {
+  margin-left: auto;
+  font-weight: 900;
 }
 
+.btn-close {
+  margin: 0;
 .btn-close {
   margin: 0;
 }
@@ -92,8 +105,25 @@ body {
 
 .modal-body {
   align-self: center;
+.btn {
+  background-color: green;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
 }
 
+.btn:hover {
+  background-color: rgb(72, 248, 72);
+  color: black;
+}
+
+.modal-body {
+  align-self: center;
+}
+
+#image-pokemon {
+  margin-left: 8rem;
+  width: 12.5rem;
+  height: 12.5rem;
 #image-pokemon {
   margin-left: 8rem;
   width: 12.5rem;
@@ -114,7 +144,26 @@ body {
 .modal-description {
   align-self: start;
   font-weight: 900;
+#searchPokemon {
+  display: flex;
+  width: 35rem;
+  align-content: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  background-color: rgba(2, 2, 5, 0.589);
+  border-radius: 6px;
+  padding: 1rem;
 }
+
+.modal-description {
+  align-self: start;
+  font-weight: 900;
+}
+.modal-abilities {
+  align-self: start;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
 .modal-abilities {
   align-self: start;
   margin-left: 1rem;
@@ -123,12 +172,18 @@ body {
 }
 .modal-footer {
   padding: 0.25rem;
+.modal-footer {
+  padding: 0.25rem;
 }
 
 label {
   font-weight: 900;
+label {
+  font-weight: 900;
 }
 
+.label-abilities {
+  margin-left: 1rem;
 .label-abilities {
   margin-left: 1rem;
 }
