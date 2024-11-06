@@ -7,8 +7,10 @@ export function createCard(pokemon, index, pokemonTypes) {
 
   const card = document.createElement("div");
   card.classList.add("card");
-  card.style.width = "18rem";
+  card.style.width = "14rem";
+  card.style.height = "14.1rem";
   card.style.borderRadius = "6px";
+  card.style.background = "linear-gradient(to top, #f57272, #f572728f)";
   card.style.cursor = "pointer";
   card.title = `Ver detalhes do pokemon ${pokemon.name.toUpperCase()}`;
 
@@ -61,10 +63,10 @@ export function createCard(pokemon, index, pokemonTypes) {
   // card.appendChild(backgroundImgCard);
   // card.appendChild(titlePokemon);
   card.appendChild(cardTitle);
-  card.appendChild(imgPokemon);
-  // card.appendChild(cardBody);
-  card.appendChild(cardTypeLabel);
-  card.appendChild(cardText);
+  card.appendChild(cardBody);
+  cardBody.appendChild(imgPokemon);
+  cardBody.appendChild(cardTypeLabel);
+  cardBody.appendChild(cardText);
   // cardBody.appendChild(btnVerMais);
 
   pokemonList.appendChild(card);
