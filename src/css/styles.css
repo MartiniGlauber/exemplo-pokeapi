@@ -1,65 +1,87 @@
-
 @import "header.css";
 
-main{
-    height: 100vh;
+main {
+  height: 100vh;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-    background-image: url("/src/assets/images/background-pokemon-field.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background-image: url("/src/assets/images/pokeball.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.wrapper-content{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.wrapper-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.modal-header{
-    padding: 0.25rem 0.25rem;
+.modal-header {
+  padding: 0.25rem 0.25rem;
 }
-.modal-title{
-    margin-left: auto;
-    font-weight: 900;
-}
-
-.btn-close{
-    margin: 0;
+.modal-title {
+  margin-left: auto;
+  font-weight: 900;
 }
 
-.modal-body{
-    align-self: center;
+.btn-close {
+  margin: 0;
 }
 
-#image-pokemon{
-    margin-left: 8rem;
-    width: 12.5rem;
-    height: 12.5rem;
+.btn {
+  background-color: green;
+  color: white;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-.modal-description{
-    align-self: start;
-    font-weight: 900;
-}
-.modal-abilities{
-    align-self: start;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 900;
-}
-.modal-footer{
-    padding: 0.25rem;
+.btn:hover {
+  background-color: rgb(72, 248, 72);
+  color: black;
 }
 
-label{
-    font-weight: 900;
+.modal-body {
+  align-self: center;
 }
 
-.label-abilities{
-    margin-left: 1rem;
+#image-pokemon {
+  margin-left: 8rem;
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
+#searchPokemon {
+  display: flex;
+  width: 35rem;
+  align-content: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  background-color: rgba(2, 2, 5, 0.589);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.modal-description {
+  align-self: start;
+  font-weight: 900;
+}
+.modal-abilities {
+  align-self: start;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+}
+.modal-footer {
+  padding: 0.25rem;
+}
+
+label {
+  font-weight: 900;
+}
+
+.label-abilities {
+  margin-left: 1rem;
 }
