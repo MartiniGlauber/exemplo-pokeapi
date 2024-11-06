@@ -11,6 +11,7 @@ body {
   background-image: url("/src/assets/images/pokeball.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
 }
 
@@ -22,7 +23,7 @@ body {
 }
 .card {
   transition: transform 0.5s, filter 0.5s;
-  background-color: #c9c1c1;
+  background-color: #c9c1c193;
 }
 .card:hover {
   transform: scale(1.05);
@@ -33,17 +34,19 @@ body {
   margin-top: 1rem;
 }
 .card-type-label {
-  align-self: center;
+  justify-self: center;
 }
 .card-text {
   align-self: center;
 }
 .card-text:last-child {
   margin-bottom: 1rem;
+  justify-self: center;
 }
 .card-body {
   padding: 0rem 1rem 0.5rem 1rem;
   z-index: 1;
+  justify-items: center;
 }
 
 .background-img-card {
@@ -62,7 +65,8 @@ body {
 
 .card-img-top {
   z-index: 1;
-  filter: drop-shadow(3px 3px 3px rgb(43, 40, 40));
+  filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
+  width: 6rem;
 }
 .btn-primary {
   background-color: #3c5ba6;
