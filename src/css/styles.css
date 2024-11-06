@@ -12,14 +12,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-body {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
-  background-image: url("/src/assets/images/pokeball.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .wrapper-content {
@@ -28,66 +20,62 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
-.card{ 
-    transition: transform 0.5s, filter 0.5s; 
-    background-color: #c9c1c1;  
-} 
-.card:hover{
-    transform: scale(1.05); 
-    filter: brightness(1.1);   
+.card {
+  transition: transform 0.5s, filter 0.5s;
+  background-color: #c9c1c1;
 }
-.card-title{
-    align-self: center;
-    margin-top: 1rem;
+.card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
-.card-type-label{
-    align-self: center;
+.card-title {
+  align-self: center;
+  margin-top: 1rem;
 }
-.card-text{
-    align-self: center;
+.card-type-label {
+  align-self: center;
 }
-.card-text:last-child{
-    margin-bottom: 1rem;
+.card-text {
+  align-self: center;
 }
-.card-body{
-    padding: 0rem 1rem 0.5rem 1rem;
-    z-index: 1;
+.card-text:last-child {
+  margin-bottom: 1rem;
 }
-.background-img-card{
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
+.card-body {
+  padding: 0rem 1rem 0.5rem 1rem;
+  z-index: 1;
 }
-.title-pokemon{
-    margin-top: 0.5rem;
-    position: relative;
-    z-index: 1;
+
+.background-img-card {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
 }
-.card-img-top{
-    z-index: 1;
-    filter: drop-shadow(3px 3px 3px rgb(43, 40, 40));
+
+.title-pokemon {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
-.btn-primary{
-    background-color: #3C5BA6;
-    border-color: #3C5BA6;
+
+.card-img-top {
+  z-index: 1;
+  filter: drop-shadow(3px 3px 3px rgb(43, 40, 40));
 }
-.modal-header{
-    padding: 0.25rem 0.25rem;
+.btn-primary {
+  background-color: #3c5ba6;
+  border-color: #3c5ba6;
+}
 .modal-header {
   padding: 0.25rem 0.25rem;
 }
 .modal-title {
   margin-left: auto;
   font-weight: 900;
-.modal-title {
-  margin-left: auto;
-  font-weight: 900;
 }
 
-.btn-close {
-  margin: 0;
 .btn-close {
   margin: 0;
 }
@@ -103,8 +91,6 @@ body {
   color: black;
 }
 
-.modal-body {
-  align-self: center;
 .btn {
   background-color: green;
   color: white;
@@ -120,10 +106,6 @@ body {
   align-self: center;
 }
 
-#image-pokemon {
-  margin-left: 8rem;
-  width: 12.5rem;
-  height: 12.5rem;
 #image-pokemon {
   margin-left: 8rem;
   width: 12.5rem;
@@ -141,9 +123,6 @@ body {
   padding: 1rem;
 }
 
-.modal-description {
-  align-self: start;
-  font-weight: 900;
 #searchPokemon {
   display: flex;
   width: 35rem;
@@ -164,30 +143,20 @@ body {
   margin-left: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 900;
-.modal-abilities {
-  align-self: start;
-  margin-left: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 900;
 }
-.modal-footer {
-  padding: 0.25rem;
 .modal-footer {
   padding: 0.25rem;
 }
 
 label {
   font-weight: 900;
-label {
-  font-weight: 900;
 }
 
 .label-abilities {
   margin-left: 1rem;
-.label-abilities {
-  margin-left: 1rem;
 }
-.title-pokemon{
-    width: 70%;
-    align-self: center;
+
+.title-pokemon {
+  width: 70%;
+  align-self: center;
 }
