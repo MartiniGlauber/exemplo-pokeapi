@@ -17,7 +17,17 @@ let nextPage = next;
 const btnCarregarMais = document.querySelector("#btnCarregarMais");
 const formSearch = document.getElementById("searchPokemon");
 
-
+export let intervalId;
+export function setIntervalId(novoIntervalId) {
+  intervalId = novoIntervalId;
+}
+const btnFechaModal = document.querySelectorAll(".btnFechaModal");
+btnFechaModal.forEach((btnFechar) => {
+  btnFechar.addEventListener("click", () => {
+    clearInterval(intervalId);
+  });
+});
+console.log("btnFechaModal: ", btnFechaModal);
 // Evento clique no botão pesquisar do nav
 formSearch.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -42,7 +52,7 @@ btnCarregarMais.addEventListener("click", async (event) => {
     const data = await fetch(nextPage);
     const response = await data.json();
 
-    // Cria os cards e adiciona à página -- 
+    // Cria os cards e adiciona à página --
     for (const pokemon of response.results) {
       const pokemonId = getPokemonId(pokemon.url);
       const { types } = await fetchDetails(pokemon.url);
@@ -56,9 +66,7 @@ btnCarregarMais.addEventListener("click", async (event) => {
     if (!response.next) {
       btnCarregarMais.disabled = true;
     }
-
   } catch (error) {
     showError("Ops! Erro inesperado");
   }
 });
-

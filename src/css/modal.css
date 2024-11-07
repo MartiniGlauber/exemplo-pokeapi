@@ -1,0 +1,39 @@
+:root {
+  --fonte-texto: "Montserrat", sans-serif;
+  --fonte-destaque: "Anton", sans-serif;
+}
+
+.modal-content {
+  background-image: url(/src/assets/images/fundoCard.jpg);
+}
+.modal-body {
+  align-self: center;
+}
+
+.modal-header {
+  padding: 0.25rem 0.25rem;
+}
+.modal-title {
+  margin-left: auto;
+  font-family: var(--fonte-destaque);
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.modal-description {
+  align-self: start;
+  font-family: var(--fonte-texto);
+  font-weight: 400;
+}
+
+.modal-abilities {
+  font-family: var(--fonte-texto);
+  font-weight: 400;
+  align-self: start;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.modal-footer {
+  display: flex;
+  padding: 0.25rem;
+}

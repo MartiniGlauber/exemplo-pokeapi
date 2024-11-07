@@ -1,18 +1,18 @@
 @import "header.css";
+@import "modal.css";
 
 main {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
-
 body {
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
+  row-gap: 50px;
   background-image: url("/src/assets/images/pokeball.png");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   padding-bottom: 3rem;
 }
 
@@ -22,15 +22,18 @@ body {
   gap: 20px;
   flex-wrap: wrap;
 }
-.back-to-top-link{
+.back-to-top-link {
   font-size: 2rem;
-  float: right;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 .card {
   transition: transform 0.5s, filter 0.5s;
-  background-color: #f572728f;
+  background-color: #e0e4ecdc;
 }
 .card:hover {
+  background-blend-mode: lighten;
   transform: scale(1.05);
   filter: brightness(1.1);
 }
@@ -77,13 +80,6 @@ body {
   background-color: #3c5ba6;
   border-color: #3c5ba6;
 }
-.modal-header {
-  padding: 0.25rem 0.25rem;
-}
-.modal-title {
-  margin-left: auto;
-  font-weight: 900;
-}
 
 .btn-close {
   margin: 0;
@@ -111,8 +107,9 @@ body {
   color: black;
 }
 
-.modal-body {
-  align-self: center;
+#btnCarregarMais {
+  width: 30rem;
+  margin: 1.5rem auto;
 }
 
 #image-pokemon {
@@ -144,21 +141,6 @@ body {
   padding: 1rem;
 }
 
-.modal-description {
-  align-self: start;
-  font-weight: 900;
-}
-
-.modal-abilities {
-  align-self: start;
-  margin-left: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 900;
-}
-.modal-footer {
-  padding: 0.25rem;
-}
-
 label {
   font-weight: 900;
 }
@@ -170,4 +152,11 @@ label {
 .title-pokemon {
   width: 70%;
   align-self: center;
+}
+
+@media (max-width: 650) {
+  #searchPokemon {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
