@@ -67,33 +67,32 @@
       <button type="button" class="btn btn-primary" id="btnCarregarMais">
         Carregar mais
       </button>      
-      <a href="#" class="back-to-top-link"><i class="fa-regular fa-square-caret-up" title="Voltar ao topo"></i></a>
     </main>
     <div
-      id="error-alert"
-      class="alert alert-danger d-none position-fixed bottom-0 start-50 translate-middle-x"
-      role="alert"
+    id="error-alert"
+    class="alert alert-danger d-none position-fixed bottom-0 start-50 translate-middle-x"
+    role="alert"
     >
-      <!-- Aqui a mensagem de erro será exibida -->
-    </div>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
+    <!-- Aqui a mensagem de erro será exibida -->
+  </div>
+  
+  <!-- Modal -->
+  <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
             <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
+            type="button"
+            class="btn-close btnFechaModal"
+            data-bs-dismiss="modal"
+            aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
@@ -102,26 +101,27 @@
               <label>Pokemon description:</label>
             </div>
             <div class="modal-description"></div>
-              <span class="modal-description-text"></span>
-            </div>
-            <label class="label-abilities">Pokemon abilities:</label>
-            <div class="modal-abilities">
-              <span class="modal-abilities-text"></span>
-            </div>
+            <span class="modal-description-text"></span>
+          </div>
+          <label class="label-abilities">Pokemon abilities:</label>
+          <div class="modal-abilities">
+            <span class="modal-abilities-text"></span>
+          </div>
             <div class="modal-footer">
               <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
+              type="button"
+              class="btn btn-primary btnFechaModal"
+              data-bs-dismiss="modal"
               >
-                Fechar
-              </button>
-            </div>
+              Fechar
+            </button>
+          </div>
           </div>
         </div>
       </div>
     </div>
     
+    <a href="#" class="back-to-top-link"><i class="fa-regular fa-square-caret-up" title="Voltar ao topo"></i></a>
 
     <!-- Carrega o JS do Bootstrap através de uma CDN -->
     <script
