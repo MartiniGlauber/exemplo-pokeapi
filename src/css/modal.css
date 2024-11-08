@@ -9,7 +9,14 @@
 .modal-body {
   align-self: center;
 }
-
+#image-pokemon {
+  margin-left: 8rem;
+  width: 12.5rem;
+  height: 12.5rem;
+  filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
 .modal-header {
   padding: 0.25rem 0.25rem;
 }
@@ -25,7 +32,9 @@
   font-family: var(--fonte-texto);
   font-weight: 400;
 }
-
+.label-abilities {
+  margin-left: 1rem;
+}
 .modal-abilities {
   font-family: var(--fonte-texto);
   font-weight: 400;

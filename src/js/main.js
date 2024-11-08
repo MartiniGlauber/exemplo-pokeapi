@@ -31,12 +31,12 @@ console.log("btnFechaModal: ", btnFechaModal);
 
 // evento digitação para subir um label
 
-document.addEventListener("keyup", function(){
+searchInput.addEventListener("input", function(event){
+  const inputValue = event.target.value;
   
-  //const input = document.getElementById("searchInput");
   const helpText = document.getElementById("helpText");
   
-  if(searchInput !== ""){
+  if(inputValue != ""){
     helpText.innerText = "Digite o nome do Pokemon";
   }else{
     helpText.innerText = "";
