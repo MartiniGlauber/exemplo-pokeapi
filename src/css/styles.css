@@ -85,25 +85,25 @@ body {
 }
 
 .btn {
-  background-color: green;
-  color: white;
+  background-color: #3A6D4F;
+  color: #D7EB36;
   transition: background-color 0.5s, color 0.5s;
 }
 
 .btn:hover {
-  background-color: rgb(72, 248, 72);
-  color: black;
+  background-color: #577c67;
+  color: #dff05d;
+ 
 }
 
-.btn {
-  background-color: green;
-  color: white;
-  transition: background-color 0.5s, color 0.5s;
+a{
+  color:#3A6D4F;
 }
-
-.btn:hover {
-  background-color: rgb(72, 248, 72);
-  color: black;
+a :hover{
+  color: #577c67;
+}
+a :visited{
+  color:#3A6D4F;
 }
 
 #btnCarregarMais {
@@ -148,6 +148,19 @@ body {
   padding: 1rem;
 }
 
+.hidden { 
+  display: none; 
+}
+
+#inputLabel { 
+  display: block; 
+  top: 50%; 
+  left: 10px; 
+  transform: translateY(-50%); 
+  color: #3A6D4F; 
+  font-size: 14px; 
+}
+
 label {
   font-weight: 900;
 }
@@ -161,9 +174,20 @@ label {
   align-self: center;
 }
 
-@media (max-width: 650) {
+@media (max-width: 840px) {
   #searchPokemon {
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  #searchButton{
+    width: 8rem;
+    align-self: center;
+    margin-top: 0.8rem;
+  }
+  #searchInput{
+    text-align: center;
+  }
+  .me-3{
+    margin-right: 0% !important;
   }
 }
