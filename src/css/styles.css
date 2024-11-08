@@ -4,15 +4,14 @@
 main {
   display: flex;
   flex-direction: column;
-  align-self: center;
 }
 body {
   display: flex;
   flex-direction: column;
   row-gap: 50px;
-  background-image: url("/src/assets/images/pokeball.png");
-  background-size: contain;
+  background-image: url("../assets/images/pokeball-background3-baixa.png");
   background-repeat: no-repeat;
+  background-size: 100%;
   padding-bottom: 3rem;
 }
 
@@ -74,7 +73,7 @@ body {
 .card-img-top {
   z-index: 1;
   filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
-  width: 6rem;
+  width: 6.5rem;
 }
 .btn-primary {
   background-color: #3c5ba6;
@@ -132,7 +131,7 @@ body {
 
 #searchPokemon {
   display: flex;
-  width: 35rem;
+  width: 45%;
   align-content: center;
   justify-self: center;
   margin-top: 1.5rem;
