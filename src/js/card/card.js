@@ -76,6 +76,8 @@ export function createCard(pokemon, index, pokemonTypes) {
 export async function createModal(pokemonUrl) {
 
   clearCurrentInterval();
+
+  clearCurrentInterval();
   //console.log("TESTE 2");
   const responseDetails = await fetchDetails(pokemonUrl);
 
