@@ -28,6 +28,22 @@ btnFechaModal.forEach((btnFechar) => {
   });
 });
 console.log("btnFechaModal: ", btnFechaModal);
+
+// evento digitação para subir um label
+
+searchInput.addEventListener("input", function(event){
+  const inputValue = event.target.value;
+  
+  const helpText = document.getElementById("helpText");
+  
+  if(inputValue != ""){
+    helpText.innerText = "Digite o nome do Pokemon";
+  }else{
+    helpText.innerText = "";
+  }
+   
+});
+
 // Evento clique no botão pesquisar do nav
 formSearch.addEventListener("submit", async (event) => {
   event.preventDefault();

@@ -74,6 +74,8 @@ export function createCard(pokemon, index, pokemonTypes) {
 }
 
 export async function createModal(pokemonUrl) {
+
+  setIntervalId();
   //console.log("TESTE 2");
   const responseDetails = await fetchDetails(pokemonUrl);
 

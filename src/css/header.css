@@ -1,9 +1,50 @@
 .header-content {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: -20px;
 }
 
 .header-logo {
   max-width: 52vw;
+}
+#searchPokemon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  width: 40%;
+  align-content: center;
+  justify-self: center;
+  margin-top: 1.5rem;
+  background-color: rgba(2, 2, 5, 0.589);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.section-form-control{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.helpTextDiv{
+  margin-bottom: 0.8rem;
+}
+#helpText{
+  color: white;
+  font-weight: 500;
+}
+@media (max-width: 940px) {
+  .section-form-control{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #searchButton{
+    width: 8rem;
+    align-self: center;
+    margin-top: 0.8rem;
+  }
+  
+  .me-3{
+    margin-right: 0% !important;
+  }
 }

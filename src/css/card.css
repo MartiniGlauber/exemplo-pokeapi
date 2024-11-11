@@ -1,0 +1,41 @@
+.card {
+    transition: transform 0.5s, filter 0.5s;
+    background-color: #e0e4ecdc;
+  }
+  .card:hover {
+    background-blend-mode: lighten;
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  .card-title {
+    align-self: center;
+    margin-top: 1rem;
+  }
+  .card-type-label {
+    justify-self: center;
+  }
+  .card-text {
+    align-self: center;
+  }
+  .card-text:last-child {
+    margin-bottom: 1rem;
+    justify-self: center;
+  }
+  .card-body {
+    padding: 0rem 1rem 0.5rem 1rem;
+    z-index: 1;
+    justify-items: center;
+  }
+  
+  .background-img-card {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  .card-img-top {
+    z-index: 1;
+    filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
+    width: 6.5rem;
+  }
