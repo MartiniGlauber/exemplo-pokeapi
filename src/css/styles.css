@@ -13,6 +13,7 @@ body {
   background-image: url("../assets/images/pokeball-background3-baixa.png");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
   padding-bottom: 3rem;
 }
 
@@ -62,4 +63,15 @@ a :visited{
 
 label {
   font-weight: 900;
+}
+@media (max-width: 560px) {
+  #btnCarregarMais{
+    width: 28.2rem;
+  }  
+}
+@media (max-width: 465px) {
+  #btnCarregarMais{
+    width: 14.1rem;
+  }
+  
 }
