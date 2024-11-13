@@ -20,11 +20,11 @@ O Pokédex é uma aplicação web interativa que permite explorar o fascinante u
 Frontend: HTML, CSS, JavaScript
 API: PokéAPI
 
-Contribuições:
+** Contribuições: **
 
 Contribuições são bem-vindas! Se você encontrar algum bug ou tiver alguma sugestão, por favor, abra um problema ou faça um pull request.
 
-Autor: 
+Autores: 
 Felipe Verdade Didio -  f3lip3d3v@gmail.com
 Glauber Martini dos Santos - gmartinisantos@gmail.com
 
