@@ -15,6 +15,8 @@ O Pokédex é uma aplicação web interativa que permite explorar o fascinante u
    ```bash 
    git clone https://github.com/MartiniGlauber/exemplo-pokeapi
    ```
+Abra o projeto clonado no Visual Studio Code e rode o programa.
+
 💾 ##Tecnologias utilizadas:
 
 Frontend: HTML, CSS, JavaScript
