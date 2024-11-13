@@ -4,8 +4,7 @@
 
 O Pokédex é uma aplicação web interativa que permite explorar o fascinante universo dos Pokémon. Com este projeto, você pode:
 
-🔮 
-## Funcionalidades
+🔮## Funcionalidades
 * **Visualizar todos os Pokémon:** Explore uma extensa lista de Pokémon, desde os clássicos até os mais recentes.
 * **Filtrar por tipo:** Descubra todos os Pokémon de um tipo específico, como fogo, água ou grama.
 * **Ver detalhes completos:** Clique em qualquer Pokémon para obter informações detalhadas, como seus tipos, habilidades e sprites.
