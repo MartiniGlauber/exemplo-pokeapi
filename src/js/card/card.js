@@ -4,16 +4,13 @@ import { setIntervalId } from "../main.js";
 import { getPokemonId } from "../utils/utils.js";
 
 export function createCard(pokemon, index, pokemonTypes) {
-  console.log(pokemon);
-
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = "14rem";
   card.style.height = "14.1rem";
   card.style.borderRadius = "7px";
-  // card.style.background = "linear-gradient(to top, #f57272, #f572728f)";
   card.style.cursor = "pointer";
-  card.title = `Ver detalhes do pokemon ${pokemon.name.toUpperCase()}`;
+  card.title = `Ver detalhes do pokemon ${pokemon.name}`;
 
   const backgroundImgCard = document.createElement("img");
   backgroundImgCard.classList.add("background-img-card");
@@ -34,9 +31,7 @@ export function createCard(pokemon, index, pokemonTypes) {
 
   const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
-  cardTitle.textContent = `${
-    pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
-  }`;
+  cardTitle.textContent = `${pokemon.name}`;
 
   const cardTypeLabel = document.createElement("h6");
   cardTypeLabel.classList.add("card-type-label");
@@ -51,15 +46,10 @@ export function createCard(pokemon, index, pokemonTypes) {
     (pokemonTypes[1] ? " / " + pokemonTypes[1].type.name : "");
 
   cardText.textContent = stringTypes;
-
-  // const btnVerMais = document.createElement("button");
-  // btnVerMais.textContent = "Ver mais";
-  // btnVerMais.classList = "btn btn-primary";
   card.setAttribute("data-bs-toggle", "modal");
   card.setAttribute("data-bs-target", "#exampleModal");
   card.addEventListener("click", () => {
     createModal(pokemon.url);
-    console.log(pokemon.url);
   });
   // card.appendChild(backgroundImgCard);
   // card.appendChild(titlePokemon);
@@ -74,12 +64,10 @@ export function createCard(pokemon, index, pokemonTypes) {
 }
 
 export async function createModal(pokemonUrl) {
-
   setIntervalId();
-  //console.log("TESTE 2");
+
   const responseDetails = await fetchDetails(pokemonUrl);
 
-  console.log("FetchDetails: ", responseDetails);
   document.querySelector(".modal-title").innerHTML =
     responseDetails.name.charAt(0).toUpperCase() +
     responseDetails.name.slice(1);
@@ -99,7 +87,6 @@ export async function createModal(pokemonUrl) {
   let speciesUrl = responseDetails["species"].url;
   const description = await fetchDescription(speciesUrl);
   let stringDescription = description;
-  console.log("Description", description);
 
   document.querySelector("#image-pokemon").setAttribute("src", frontImg);
   document.querySelector(".modal-abilities").innerHTML =
@@ -109,7 +96,7 @@ export async function createModal(pokemonUrl) {
   let currentImg = "front";
   const interval = setInterval(() => {
     const img = document.querySelector("#image-pokemon");
-    console.log("entrou no if");
+
     if (currentImg == "front") {
       img.setAttribute("src", backImg);
       currentImg = "back";
