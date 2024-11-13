@@ -1,4 +1,4 @@
-import { createModal } from "../card/card.js";
+import { createCard, createModal } from "../card/card.js";
 import { urlPokeApi } from "../constants/constants.js";
 import { showError } from "../errors/errors.js";
 
@@ -8,8 +8,17 @@ export async function searchPokemon(searchValue) {
   try {
     await createModal(pokemonQuery);
   } catch (error) {
-    showError("Certifique-se de que digitou o nome do pokemon corretamente")
+    showError("Certifique-se de que digitou o nome do pokemon corretamente");
   }
+}
+
+export async function selectByTypes(selectValue) {
+  const pokemonQuery = `https://pokeapi.co/api/v2/type/${selectValue}?limit=20`;
+  const response = await fetch(pokemonQuery);
+  const pokemonList = await response.json();
+
+  const pokemons = pokemonList.pokemon.map((p) => p.pokemon);
+  return pokemons;
 }
 
 export async function listAllPokemons(urlApi = urlPokeApi) {

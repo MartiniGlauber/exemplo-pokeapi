@@ -1,14 +1,17 @@
 import { createCard, createModal } from "./card/card.js";
-import { urlPokeApi } from "./constants/constants.js";
+import {
+  pokemonList,
+  telaCarregamento,
+  urlPokeApi,
+} from "./constants/constants.js";
 import { showError } from "./errors/errors.js";
 import {
   listAllPokemons,
   fetchDetails,
   searchPokemon,
+  selectByTypes,
 } from "./fetchApi/fetchfunctions.js";
 import { getPokemonId } from "./utils/utils.js";
-
-console.log("carregou!");
 
 const { count, results, next, previous } = await listAllPokemons();
 
@@ -16,6 +19,24 @@ let nextPage = next;
 
 const btnCarregarMais = document.querySelector("#btnCarregarMais");
 const formSearch = document.getElementById("searchPokemon");
+const selectTypes = document.getElementsByClassName("form-select")[0];
+
+selectTypes.addEventListener("change", async (event) => {
+  telaCarregamento.classList.toggle("isLoading");
+  const selectValue = event.target.value;
+  if (selectValue === "Ou escolha pelo tipo") {
+    listAllPokemons(urlPokeApi);
+  } else {
+    const pokemonsFiltered = await selectByTypes(selectValue);
+    pokemonList.innerHTML = "";
+    for (const pokemon of pokemonsFiltered) {
+      const pokemonId = getPokemonId(pokemon.url);
+      const { types } = await fetchDetails(pokemon.url);
+      await createCard(pokemon, pokemonId, types);
+    }
+  }
+  telaCarregamento.classList.toggle("isLoading");
+});
 
 export let intervalId;
 export function setIntervalId(novoIntervalId) {
@@ -27,29 +48,26 @@ btnFechaModal.forEach((btnFechar) => {
     clearInterval(intervalId);
   });
 });
-console.log("btnFechaModal: ", btnFechaModal);
 
 // evento digitação para subir um label
 
-searchInput.addEventListener("input", function(event){
+searchInput.addEventListener("input", function (event) {
   const inputValue = event.target.value;
-  
+
   const helpText = document.getElementById("helpText");
-  
-  if(inputValue != ""){
+
+  if (inputValue != "") {
     helpText.innerText = "Digite o nome do Pokemon";
-  }else{
+  } else {
     helpText.innerText = "";
   }
-   
 });
 
 // Evento clique no botão pesquisar do nav
 formSearch.addEventListener("submit", async (event) => {
   event.preventDefault();
-  console.log("formSearch: ", event.target.searchInput.value);
+
   const inputValue = event.target.searchInput.value.trim().toLowerCase();
-  console.log("inputValue: ", inputValue);
 
   if (inputValue !== "") {
     await searchPokemon(inputValue);
@@ -58,7 +76,6 @@ formSearch.addEventListener("submit", async (event) => {
 
 for (const pokemon of results) {
   const pokemonId = getPokemonId(pokemon.url);
-  console.log("TESTE 0");
   const { types } = await fetchDetails(pokemon.url);
   await createCard(pokemon, pokemonId, types);
 }
