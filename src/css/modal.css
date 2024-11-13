@@ -4,7 +4,7 @@
 }
 
 .modal-content {
-  background-image: url(/src/assets/images/fundoCard.jpg);
+  background-image: url("../assets/images/fundoCard.jpg");
 }
 .modal-body {
   align-self: center;
