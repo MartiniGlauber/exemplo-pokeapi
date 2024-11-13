@@ -81,6 +81,7 @@ for (const pokemon of results) {
 }
 
 btnCarregarMais.addEventListener("click", async (event) => {
+  telaCarregamento.classList.toggle("isLoading");
   try {
     const data = await fetch(nextPage);
     const response = await data.json();
@@ -102,4 +103,5 @@ btnCarregarMais.addEventListener("click", async (event) => {
   } catch (error) {
     showError("Ops! Erro inesperado");
   }
+  telaCarregamento.classList.toggle("isLoading");
 });
