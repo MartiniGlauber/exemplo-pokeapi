@@ -31,6 +31,7 @@ export function createCard(pokemon, index, pokemonTypes) {
 
   const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
+  cardTitle.classList.add("text-capitalize");
   cardTitle.textContent = `${pokemon.name}`;
 
   const cardTypeLabel = document.createElement("h6");
