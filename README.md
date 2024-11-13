@@ -26,3 +26,6 @@ Contribuições são bem-vindas! Se você encontrar algum bug ou tiver alguma su
 Autor: 
 Felipe Verdade Didio -  f3lip3d3v@gmail.com
 Glauber Martini dos Santos - gmartinisantos@gmail.com
+
+Para visitar o projeto no gitpages acesse:
+https://martiniglauber.github.io/exemplo-pokeapi/
