@@ -7,7 +7,7 @@ export function createCard(pokemon, index, pokemonTypes) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = "14rem";
-  card.style.height = "14.1rem";
+  card.style.textAlign = "center";
   card.style.borderRadius = "7px";
   card.style.cursor = "pointer";
   card.title = `Ver detalhes do pokemon ${pokemon.name}`;

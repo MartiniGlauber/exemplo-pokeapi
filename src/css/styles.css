@@ -89,7 +89,7 @@ label {
     width: 28.2rem;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 467px) {
   #btnCarregarMais {
     width: 14.1rem;
   }

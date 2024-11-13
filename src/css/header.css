@@ -11,7 +11,7 @@ header {
   width: 100%;
   align-items: center;
   text-align: center;
-  margin-top: -20px;
+  margin-top: 20px;
 }
 
 .header-logo {
@@ -70,4 +70,22 @@ header {
   .me-3 {
     margin-right: 0% !important;
   }
+}
+
+@media (max-width: 550px) {
+  .selectTypes{
+    width: 17rem;
+  }
+  #searchPokemon{
+    width: 17rem;
+  }
+}
+
+@media (max-width: 467px) {
+    .selectTypes{
+      width: 17rem;
+    }
+    #searchPokemon{
+      width: 17rem;
+    }
 }

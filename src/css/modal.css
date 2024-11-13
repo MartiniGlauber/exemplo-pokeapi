@@ -10,7 +10,7 @@
   align-self: center;
 }
 #image-pokemon {
-  margin-left: 8rem;
+  align-self: center;
   width: 12.5rem;
   height: 12.5rem;
   filter: drop-shadow(5px 5px 5px rgb(43, 40, 40));
@@ -32,14 +32,11 @@
   font-family: var(--fonte-texto);
   font-weight: 400;
 }
-.label-abilities {
-  margin-left: 1rem;
-}
+
 .modal-abilities {
   font-family: var(--fonte-texto);
   font-weight: 400;
   align-self: start;
-  margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
 .modal-footer {
