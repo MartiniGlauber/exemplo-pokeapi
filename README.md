@@ -20,7 +20,7 @@ Abra o projeto clonado no Visual Studio Code e rode o programa.
 💾 
 ##Tecnologias utilizadas:
 
-Frontend: HTML, CSS, JavaScript
+Frontend: HTML, CSS, JavaScript, Bootstrap e Font awesome.
 API: PokéAPI
 
 **Contribuições:**
